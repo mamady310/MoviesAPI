@@ -10,22 +10,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/movies")
 public class MoviesController {
 
     @Autowired
-    private MoviesService movieService;
+    private MoviesService moviesService;
 
     @GetMapping
     public ResponseEntity<List<Movies>> getAllMovies() {
-        return new ResponseEntity<List<Movies>>(movieService.getAllMovies(), HttpStatus.OK);
+        return new ResponseEntity<List<Movies>>(moviesService.getAllMovies(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<List<Movies>> getOneMovie(@PathVariable ObjectId id){
-
+    public ResponseEntity<Optional<Movies>> getOneMovie(@PathVariable ObjectId id){
+        return new ResponseEntity<Optional<Movies>>(moviesService.getOneMovie(id), HttpStatus.OK );
     }
 
 }
