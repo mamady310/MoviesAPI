@@ -12,7 +12,7 @@ import java.util.Map;
 
 @RestController
 
-@RequestMapping("/api/movies")
+@RequestMapping("/api/reviews")
 public class ReviewController {
 
     @Autowired
