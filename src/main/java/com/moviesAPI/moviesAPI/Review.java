@@ -20,4 +20,11 @@ public class Review {
     public Review(String body) {
         this.body = body;
     }
+
+    @Override
+    public String toString() {
+        return "Review{" +
+                "body='" + body + '\'' +
+                '}';
+    }
 }
