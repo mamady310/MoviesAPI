@@ -16,4 +16,15 @@ public class Review {
     @Id
     private ObjectId id;
     private String body;
+
+    public Review(String body) {
+        this.body = body;
+    }
+
+    @Override
+    public String toString() {
+        return "Review{" +
+                "body='" + body + '\'' +
+                '}';
+    }
 }
